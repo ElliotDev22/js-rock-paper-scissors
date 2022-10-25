@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script src="script.js"></script>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <Script>
+        const choices = ["rock", "paper", "scissors"];
+
+// GETTING USER INPUT
+const userInput = prompt("Do you choose rock, paper or scissors?");
+if (userInput === "paper" || userInput === "rock" || userInput === "scissors") {
+  console.log("You chose " + `${userInput}`);
+} else {
+  console.log("Error! Try again!");
+}
+
+// GETTING COMPUTER INPUT
+let computerInput = choices[Math.floor(Math.random() * 3)];
+console.log("Computer chose" + ` ${computerInput}`);
+
+// DECLARE WINNER 
+const winner = declareWinner(userInput, computerInput);
+
+function declareWinner(userInput, computerInput) {
+  let win = {
+    rock: "scissors",
+    paper: "rock",
+    scissors: "paper"
+  };
+
+  if (win[userInput] === computerInput) {
+    console.log(`You won! ${userInput} beats ${computerInput}`);
+  } else if (win[computerInput] === userInput) {
+    console.log(`You lost! ${computerInput} beats ${userInput}`);
+  } else console.log("Tie")
+}
+
+
+    </Script>
+</body>
+</html>

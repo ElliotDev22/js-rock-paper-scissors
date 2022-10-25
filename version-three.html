@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        //Get user input
+        let userChoice = prompt('Do you choose Rock, Paper or Scissors?').toLowerCase();
+        // Get computer input
+        computerChoice = Math.random()
+        console.log(computerChoice)
+        if (computerChoice < 0.34) {
+            computerChoice = 'rock';
+        }
+        else if (computerChoice < 0.67) {
+            computerChoice = 'paper';
+        }
+        else {
+            computerChoice = 'scissors';
+        }
+
+        console.log(computerChoice)
+
+        //compare function
+        let compare = function(choice1,choice2) {
+            if (choice1 === choice2) {
+                console.log('The result is a tie')
+                return 'The result is a tie!'
+            }
+            else if (choice1 === 'rock') {
+                if (choice2 === 'scissors') {
+                    console.log('rock wins. Congrats!')
+                    return 'rock wins. Congrats!'
+                }
+                else {
+                    console.log('paper wins. You Lose!')
+                    return 'paper wins. You Lose!'
+                }
+            }
+            else if (choice1 === 'paper') {
+                if (choice2 === 'rock') {
+                    console.log('paper wins. Congrats!')
+                    return 'paper wins. Congrats!'
+                }
+                else {
+                    console.log('scissors wins. You Lose!')
+                    return 'scissors wins. You Lose!'
+                }
+            }
+            else if (choice1 === 'scissors') {
+                if (choice2 === 'paper') {
+                    console.log('scissors wins. Congrats!')
+                    return 'scissors wins. Congrats!'
+                }
+                else {
+                    console.log('rock wins. You Lose!')
+                    return 'rock wins. You Lose!'
+                }
+            }
+        }
+
+        console.log(compare(userChoice,computerChoice));
+        
+        
+        
+    </script>
+</body>
+</html>
